@@ -12,16 +12,33 @@
 	
 	<script type="text/javascript">
 		function checklogin() {
-			if(document.loginform.memberid.value == "") {
+			
+			var f = document.loginform;
+			
+			if(f.memberid.value == "") {
 				alert("아이디를 입력하세요");
-				document.loginform.memberid.select(); //아이디 입력란으로 커서 이동
+				f.memberid.select(); //아이디 입력란으로 커서 이동
 				
 				return false; //로그인 과정 중지
 			}
 			
-			if(document.loginform.memberpassword.value == "") {
+			if(f.memberid.value.length < 4 || f.memberid.value.length > 12) {
+				alert("아이디를 4~12자 사이로 입력하세요");
+				f.memberid.select(); //아이디 입력란으로 커서 이동
+				
+				return false; //로그인 과정 중지
+			}
+			
+			if(f.memberpassword.value == "") {
 				alert("비밀번호를 입력하세요");
-				document.loginform.memberpassword.select(); //비밀번호 입력란으로 커서 이동
+				f.memberpassword.select(); //비밀번호 입력란으로 커서 이동
+				
+				return false; //로그인 과정 중지
+			}
+			
+			if(f.memberpassword.value.length < 4 || f.memberpassword.value.length > 12) {
+				alert("비밀번호를 4~12자 사이로 입력하세요");
+				f.memberpassword.select(); //비밀번호 입력란으로 커서 이동
 				
 				return false; //로그인 과정 중지
 			}

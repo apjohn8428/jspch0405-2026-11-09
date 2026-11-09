@@ -8,6 +8,10 @@
 </head>
 <body>
 	<%
+	
+		//request 객체 안 자료를 출력 전 utf-8로 세팅하도록 설정
+		request.setCharacterEncoding("utf-8");
+		
 		String mid = request.getParameter("memberid");
 		System.out.println(mid);
 		
